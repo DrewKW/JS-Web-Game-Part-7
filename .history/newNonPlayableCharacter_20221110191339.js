@@ -44,31 +44,9 @@ function newNonPlayableCharacter(x, y) {
         stop()
     }
 
-    async function walkSouth(time) {
-        direction = 'south'
-        element.src = `./assets/red-character/south.gif`
-        await sleep(time)
-        stop()
-    }
 
-    function stop() {
-        direction = null
-        element.src = `./assets/red-character/static.gif`
-    }
-
-    return {
-        element: element,
-        walkWest: walkWest,
-        walkNorth: walkNorth,
-        walkEast: walkEast,
-        walkSouth: walkSouth,
-        stop: stop
-    }
-
-    function sleep(time){
-        return new Promise(resolve => {
-            setTimeout(resolve, time)
-        })  
-    }
-    
+function sleep(time){
+    return new Promise(resolve => {
+        setTimeout(resolve, time)
+    })  
 }
